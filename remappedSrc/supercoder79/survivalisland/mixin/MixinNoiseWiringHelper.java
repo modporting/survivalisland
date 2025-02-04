@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import supercoder79.survivalisland.world.util.SeedStealer;
 
-@Mixin(targets = {"net/minecraft/world/gen/noise/NoiseConfig$LegacyNoiseDensityFunctionVisitor"})
+@Mixin(targets = {"net/minecraft/world/level/levelgen/RandomState$1NoiseWiringHelper"})
 public class MixinNoiseWiringHelper implements SeedStealer {
     private long seed;
     @Inject(method = "<init>", at = @At("TAIL"))

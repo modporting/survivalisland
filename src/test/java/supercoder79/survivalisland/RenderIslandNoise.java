@@ -1,7 +1,7 @@
 package supercoder79.survivalisland;
 
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.random.Xoroshiro128PlusPlusRandom;
 import supercoder79.survivalisland.config.ConfigData;
 import supercoder79.survivalisland.noise.IslandContinentalNoise;
 import supercoder79.survivalisland.noise.OctaveNoise;
@@ -30,10 +30,10 @@ public class RenderIslandNoise {
                 int color;
                 if (value < 0) {
                     value /= -0.4;
-                    color = getIntFromColor((int)Mth.lerp(value, 255, 10), (int)Mth.lerp(value, 255, 90), (int)Mth.lerp(value, 255, 180));
+                    color = getIntFromColor((int) MathHelper.lerp(value, 255, 10), (int)MathHelper.lerp(value, 255, 90), (int)MathHelper.lerp(value, 255, 180));
                 }
                 else {
-                    color = getIntFromColor((int)Mth.lerp(value, 0, 127), (int)Mth.lerp(value, 127, 255), (int)Mth.lerp(value, 0, 127));
+                    color = getIntFromColor((int) MathHelper.lerp(value, 0, 127), (int)MathHelper.lerp(value, 127, 255), (int)MathHelper.lerp(value, 0, 127));
                 }
 
                 img.setRGB(x, z, color);
@@ -82,9 +82,9 @@ public class RenderIslandNoise {
     }
 
     public static int getIntFromColor(int red, int green, int blue) {
-        red = Mth.clamp(red, 0, 255);
-        green = Mth.clamp(green, 0, 255);
-        blue = Mth.clamp(blue, 0, 255);
+        red = MathHelper.clamp(red, 0, 255);
+        green = MathHelper.clamp(green, 0, 255);
+        blue = MathHelper.clamp(blue, 0, 255);
 
         red = (red << 16) & 0x00FF0000; //Shift red 16-bits and mask out other stuff
         green = (green << 8) & 0x0000FF00; //Shift green 8-bits and mask out other stuff
@@ -95,8 +95,8 @@ public class RenderIslandNoise {
 
     private static ConfigData configData = new ConfigData();
 
-    private static OctaveNoise domainWarpNoise = configData.domainWarpNoise.makeLive(new XoroshiroRandomSource(101));
-    private static OctaveNoise rangeVariationNoise =configData.rangeVariationNoise.makeLive(new XoroshiroRandomSource(102));
+    private static OctaveNoise domainWarpNoise = configData.domainWarpNoise.makeLive(new Xoroshiro128PlusPlusRandom(101));
+    private static OctaveNoise rangeVariationNoise =configData.rangeVariationNoise.makeLive(new Xoroshiro128PlusPlusRandom(102));
     private static final long SEED = 7;
 
     private static final double ISLAND_RADIUS = configData.islandSize;

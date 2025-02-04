@@ -13,9 +13,6 @@
     "homepage": "https://fabricmc.net/",
     "sources": ""
   },
-
-  "accessWidener" : "survivalisland.aw",
-
   "license": "LGPLv3",
   "icon": "assets/modid/icon.png",
 
@@ -30,8 +27,10 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.2",
-    "fabric": "*",
-    "minecraft": ">=1.15-"
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+
   }
 }
