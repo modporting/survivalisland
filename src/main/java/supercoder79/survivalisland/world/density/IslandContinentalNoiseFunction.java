@@ -1,6 +1,8 @@
 package supercoder79.survivalisland.world.density;
 
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.world.gen.densityfunction.DensityFunctionTypes;
 import supercoder79.survivalisland.SurvivalIsland;
 import supercoder79.survivalisland.noise.IslandContinentalNoise;
 import supercoder79.survivalisland.noise.OctaveNoise;
@@ -15,7 +17,7 @@ import net.minecraft.util.math.random.Xoroshiro128PlusPlusRandom;
 import net.minecraft.world.gen.densityfunction.DensityFunction;
 
 public class IslandContinentalNoiseFunction implements DensityFunction {
-    public static final Codec<IslandContinentalNoiseFunction> UCODEC = Codec.unit(IslandContinentalNoiseFunction::new);
+    public static final MapCodec<IslandContinentalNoiseFunction> UCODEC = Codec.unit(IslandContinentalNoiseFunction::new).fieldOf("dummy");
     public static final CodecHolder<IslandContinentalNoiseFunction> CODEC = CodecHolder.of(UCODEC);
 
     private static final ConcurrentLinkedHashCache<IslandContinentalNoise, IslandContinentalNoise> ISLAND_CONTINENTAL_NOISE_INSTANCE_CACHE =

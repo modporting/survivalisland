@@ -1,9 +1,10 @@
 {
   "required": true,
   "package": "supercoder79.survivalisland.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MixinNoiseWiringHelper"
+    "LegacyDensityFunctionVisitorSeedStealerMixin",
+    "NoiseConfigMixin"
   ],
   "client": [
   ],

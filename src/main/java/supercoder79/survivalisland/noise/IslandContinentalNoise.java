@@ -3,7 +3,6 @@ package supercoder79.survivalisland.noise;
 import supercoder79.survivalisland.util.CachedQueryableGrid2D;
 import supercoder79.survivalisland.util.RoundedQueryShape;
 
-import javax.annotation.Nonnull;
 import net.minecraft.util.math.MathHelper;
 import java.util.Objects;
 
@@ -55,8 +54,8 @@ public class IslandContinentalNoise {
                                   float targetMinValueA, float targetMaxValueA,
                                   float targetMinValueB, float targetMaxValueB,
                                   double underwaterFalloffDistanceRatioToRadius,
-                                  @Nonnull OctaveNoise domainWarpNoise,
-                                  @Nonnull OctaveNoise rangeVariationNoise
+                                  OctaveNoise domainWarpNoise,
+                                  OctaveNoise rangeVariationNoise
     ) {
         this.seed = seed;
 

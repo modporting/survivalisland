@@ -8,6 +8,6 @@ import supercoder79.survivalisland.world.density.IslandContinentalNoiseFunction;
 public final class IslandDensityFunctions {
 
     public static void init() {
-        Registry.register(Registries.DENSITY_FUNCTION_TYPE, new Identifier("survivalisland", "islandcont"), IslandContinentalNoiseFunction.UCODEC);
+        Registry.register(Registries.DENSITY_FUNCTION_TYPE, Identifier.of("survivalisland", "islandcont"), IslandContinentalNoiseFunction.UCODEC);
     }
 }
