@@ -1,7 +1,6 @@
 {
   "type": "minecraft:flat_cache",
   "argument": {
-    "type": "survivalisland:islandcont",
-    "dummy": {}
+    "type": "survivalisland:islandcont"
   }
 }
